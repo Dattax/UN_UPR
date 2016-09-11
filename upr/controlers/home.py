@@ -5,7 +5,7 @@ from upr import app, render_template
 
 @app.route("/")
 def index():
-"""    
+    """    
     displays the index page.
     """
-    render_template('index.html')
+    return render_template('index.html')
