@@ -28,6 +28,9 @@ Docs used to implement:
 [https://pypi.python.org/pypi/bcrypt/2.0.0](https://pypi.python.org/pypi/bcrypt/2.0.0)
 [http://prettyprinted.com/using-bcrypt-in-python/](http://prettyprinted.com/using-bcrypt-in-python/)
 
+bcrypt would not install on Ubuntu 14.04:
+used this to resolve install: [https://github.com/pyca/pyopenssl/issues/117](https://github.com/pyca/pyopenssl/issues/117)
+
 ### Bootstrap
 
 [Bootstrap](http://getbootstrap.com/) by Twitter. Licensed under [MIT](https://github.com/twbs/bootstrap/blob/master/LICENSE)
