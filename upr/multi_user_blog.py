@@ -3,6 +3,7 @@ import re
 import random
 import webapp2
 import hashlib
+import bcrypt
 import hmac
 import datetime
 from string import letters
@@ -15,7 +16,7 @@ from google.appengine.ext import db
 from google.appengine.ext.db import metadata
 
 
-__author__ = "Harry Staley <staleyh@gmail.com>"
+__author__ = "Harry Staley <staleyh@craftedtech.net>"
 __version__ = "1.0"
 
 # FILE LEVEL VARIABLES/CONSTANTS
@@ -88,18 +89,21 @@ class EncryptHandler(object):
         if a password salt does not exist create one, otherwise hash the
         user data .
         """
-        if not salt:
-            salt = self.make_salt()
-        hashed_pass = hashlib.sha256(username + password + salt).hexdigest()
-        return '%s|%s' % (salt, hashed_pass)
+        # if not salt:
+        #     salt = self.make_salt()
+        # hashed_pass = hashlib.sha256(username + password + salt).hexdigest()
+        # return '%s|%s' % (salt, hashed_pass)
+        hashed_pass = bcrypt.hashpw(password, bcrypt.gensalt(14))
+        return hashed_pass
 
     def valid_pass_hash(self, username, password, hashed_pass):
         """
         Checks to see if the password is valid by comparing it to a hash
         passed into the function.
         """
-        salt = hashed_pass.split('|')[0]
-        return hashed_pass == self.hash_pass(username, password, salt)
+        # salt = hashed_pass.split('|')[0]
+        # return hashed_pass == self.hash_pass(username, password, salt)
+        return bcrypt.checkpw(password, hashed_pass)
 
     def make_secure_val(self, val):
         return '%s|%s' % (val, hmac.new(COOKIE_SECRET, val).hexdigest())
@@ -221,86 +225,86 @@ class TemplateHandler(webapp2.RequestHandler, EncryptHandler):
             return
 
 
-class Post(db.Model):
-    """
-    Instantiates a class to store post (entity or row) data for posts
-    (kiind or table) in the datastor consisting of individual atributes
-    of the post (properties or fields).
-    """
-    author_id = db.StringProperty(required=True)
-    author_name = db.StringProperty(required=True)
-    subject = db.StringProperty(required=True)
-    content = db.TextProperty(required=True)
-    created = db.DateTimeProperty(auto_now_add=True)
-    modified = db.DateTimeProperty(auto_now=True)
+# class Post(db.Model):
+#     """
+#     Instantiates a class to store post (entity or row) data for posts
+#     (kiind or table) in the datastor consisting of individual atributes
+#     of the post (properties or fields).
+#     """
+#     author_id = db.StringProperty(required=True)
+#     author_name = db.StringProperty(required=True)
+#     subject = db.StringProperty(required=True)
+#     content = db.TextProperty(required=True)
+#     created = db.DateTimeProperty(auto_now_add=True)
+#     modified = db.DateTimeProperty(auto_now=True)
 
-    def post_likes(self, post_id):
-        # gets the metadata about the datastor
-        kinds = metadata.get_kinds()
-        # checks to see if any likes exist and if so displays them
-        if u'PostLike' in kinds:
-            likes = db.GqlQuery("SELECT * "
-                                "FROM PostLike "
-                                "WHERE ANCESTOR IS :1",
-                                post_key(post_id)).count()
-        else:
-            likes = 0
-        return likes
+#     def post_likes(self, post_id):
+#         # gets the metadata about the datastor
+#         kinds = metadata.get_kinds()
+#         # checks to see if any likes exist and if so displays them
+#         if u'PostLike' in kinds:
+#             likes = db.GqlQuery("SELECT * "
+#                                 "FROM PostLike "
+#                                 "WHERE ANCESTOR IS :1",
+#                                 post_key(post_id)).count()
+#         else:
+#             likes = 0
+#         return likes
 
-    def render_post(self, login_id, post_id):
-        """
-        Renders the blog post replacing cariage returns in the text with
-        html so that it displays correctly in the borowser.
-        """
-        likes = self.post_likes(post_id)
-        self._render_text = self.content.replace('\n', '<br>')
-        return render_str("post.html", login_id=login_id,
-                          likes=likes, post=self)
+#     def render_post(self, login_id, post_id):
+#         """
+#         Renders the blog post replacing cariage returns in the text with
+#         html so that it displays correctly in the borowser.
+#         """
+#         likes = self.post_likes(post_id)
+#         self._render_text = self.content.replace('\n', '<br>')
+#         return render_str("post.html", login_id=login_id,
+#                           likes=likes, post=self)
 
-    def post_like_dup(self, login_id, post_id):
-        exists = like_dup('PostLike', login_id, post_id)
-        return exists
-
-
-class PostLike(db.Model):
-    """
-    Handles the likes for each of the posts
-    """
-    like_user_id = db.StringProperty(required=True)
+#     def post_like_dup(self, login_id, post_id):
+#         exists = like_dup('PostLike', login_id, post_id)
+#         return exists
 
 
-class Comment(db.Model):
-    """
-     Instantiates a class to store comments (entity or row) data for comments
-    (kiind or table) in the datastor consisting of individual atributes
-    of the post (properties or fields).
-    """
-    author_id = db.StringProperty(required=True)
-    author_name = db.StringProperty(required=True)
-    subject = db.StringProperty(required=True)
-    content = db.TextProperty(required=True)
-    created = db.DateTimeProperty(auto_now_add=True)
-    modified = db.DateTimeProperty(auto_now=True)
-
-    def render_comment(self, login_id):
-        """
-        Renders the blog post replacing cariage returns in the text with
-        html so that it displays correctly in the borowser.
-        """
-        self._render_text = self.content.replace('\n', '<br>')
-        return render_str("comment.html", login_id=login_id,
-                          comment=self)
+# class PostLike(db.Model):
+#     """
+#     Handles the likes for each of the posts
+#     """
+#     like_user_id = db.StringProperty(required=True)
 
 
-class User(db.Model):
-    """
-    Instantiates a class to store user (entity or row) data for users
-    (kiind or table) in the datastor consisting of individual atributes
-    of the user (properties or fields).
-    """
-    username = db.StringProperty(required=True)
-    pass_hash = db.StringProperty(required=True)
-    email = db.StringProperty()
+# class Comment(db.Model):
+#     """
+#      Instantiates a class to store comments (entity or row) data for comments
+#     (kiind or table) in the datastor consisting of individual atributes
+#     of the post (properties or fields).
+#     """
+#     author_id = db.StringProperty(required=True)
+#     author_name = db.StringProperty(required=True)
+#     subject = db.StringProperty(required=True)
+#     content = db.TextProperty(required=True)
+#     created = db.DateTimeProperty(auto_now_add=True)
+#     modified = db.DateTimeProperty(auto_now=True)
+
+#     def render_comment(self, login_id):
+#         """
+#         Renders the blog post replacing cariage returns in the text with
+#         html so that it displays correctly in the borowser.
+#         """
+#         self._render_text = self.content.replace('\n', '<br>')
+#         return render_str("comment.html", login_id=login_id,
+#                           comment=self)
+
+
+# class User(db.Model):
+#     """
+#     Instantiates a class to store user (entity or row) data for users
+#     (kiind or table) in the datastor consisting of individual atributes
+#     of the user (properties or fields).
+#     """
+#     username = db.StringProperty(required=True)
+#     pass_hash = db.StringProperty(required=True)
+#     email = db.StringProperty()
 
 
 class MainPage(TemplateHandler, AuthHandler):
