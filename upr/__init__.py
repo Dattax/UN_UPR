@@ -1,6 +1,7 @@
 """
 Creates the UPR package and imports and initializes all required objects.
 """
+
 # import top-level flask bits.
 from flask import Flask, render_template
 from flask.ext.sqlalchemy import SQLAlchemy
