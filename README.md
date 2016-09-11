@@ -16,6 +16,18 @@ Use it freely but please do not republish, distribute or sell "as-is". [Read mor
 
 ## DEPENDENCIES
 
+### Flask
+
+[Flask](http://flask.pocoo.org/)
+
+### bcrypt
+
+[bcrypt](https://github.com/pyca/bcrypt/)
+
+Docs used to implement:
+[https://pypi.python.org/pypi/bcrypt/2.0.0](https://pypi.python.org/pypi/bcrypt/2.0.0)
+[http://prettyprinted.com/using-bcrypt-in-python/](http://prettyprinted.com/using-bcrypt-in-python/)
+
 ### Bootstrap
 
 [Bootstrap](http://getbootstrap.com/) by Twitter. Licensed under [MIT](https://github.com/twbs/bootstrap/blob/master/LICENSE)
