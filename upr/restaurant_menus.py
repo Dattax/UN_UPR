@@ -24,7 +24,7 @@ from sqlalchemy.sql import label
 # TODO: add image uploads to the web page to add addtional
 # funcitonality to the site
 
-__author__ = "Harry Staley <staleyh@gmail.com>"
+__author__ = "Harry Staley <staleyh@craftedtech.net>"
 __version__ = "1.0"
 
 CLIENT_ID = json.loads(

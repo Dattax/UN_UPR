@@ -17,7 +17,7 @@ from google.appengine.ext.db import metadata
 
 
 __author__ = "Harry Staley <staleyh@craftedtech.net>"
-__version__ = "1.0"
+__version__ = "0.01"
 
 # FILE LEVEL VARIABLES/CONSTANTS
 
