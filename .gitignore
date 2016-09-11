@@ -12,4 +12,6 @@ var
 sdist
 develop-eggs
 .installed.cfg
+.vagrant/
 
+Vagrantfile
