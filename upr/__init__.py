@@ -11,3 +11,6 @@ app = Flask("upr")
 app.config.from_object('upr.config')
 #initialize the sqlalchemy object.
 db = SQLAlchemy(app)
+
+#import controlers to establish routes.
+import controlers
