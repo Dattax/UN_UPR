@@ -22,25 +22,25 @@
   <meta name="msapplication-config" content="img/favicons/browserconfig.xml">
   <meta name="theme-color" content="#ffffff">
   <!-- upr specific styles -->
-  <link rel="stylesheet" type="text/css" href="css/upr_styles.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/upr_styles.css') }}">
   <!-- Normalize -->
-  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/normalize.css') }}">
   <!-- Bootstrap -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
   <!-- Owl -->
-  <link rel="stylesheet" type="text/css" href="css/owl.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/owl.css') }}">
   <!-- Animate.css -->
-  <link rel="stylesheet" type="text/css" href="css/animate.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/animate.css') }}">
   <!-- Font Awesome -->
-  <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.1.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='fonts/font-awesome-4.1.0/css/font-awesome.min.css') }}">
   <!-- Elegant Icons -->
-  <link rel="stylesheet" type="text/css" href="fonts/eleganticons/et-icons.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='fonts/eleganticons/et-icons.css') }}">
   <!-- Main style -->
-  <link rel="stylesheet" type="text/css" href="css/cardio.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/cardio.css') }}">
 </head>
 <body>
   <div class="preloader">
-    <img src="img/loader.gif" alt="Preloader image">
+    <img src="{{ url_for('static', filename='') }}img/loader.gif" alt="Preloader image">
   </div>
   <nav class="navbar">
     <div class="container">
@@ -52,7 +52,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#"><img src="img/logo.png" data-active-url="img/logo-active.png" alt=""></a>
+        <a class="navbar-brand" href="#"><img src="{{ url_for('static', filename='img/logo.png') }}" data-active-url="{{ url_for('static', filename='img/logo-active.png') }}" alt=""></a>
       </div>
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -75,10 +75,19 @@
               <h1 class="white typed">Universal Periodic Review</h1>
               <span class="typed-cursor">|</span><br /><br /><br />
               <center>
-              <p><input type="text" class="form-control form-white" placeholder="Enter username" name="username" style="width:30%;" /></p>
-              <p><input type="password" class="form-control form-white" placeholder="Enter password" name="password" style="width:30%;"/></p></center>
-              <p style="font-size:10px;"><a href="#">Forgot Username</a> <a href="#">Forgot Password</a></p>
-              <p><a href="landing.html" class="btn btn-blue" style="margin-bottom:10px;">Login</a></p>
+                <p>
+                  <input type="text" class="form-control form-white" placeholder="Enter username" name="username" style="width:30%;" />
+                </p>
+                <p>
+                  <input type="password" class="form-control form-white" placeholder="Enter password" name="password" style="width:30%;"/>
+                </p>
+              </center>
+              <p style="font-size:10px;">
+                <a href="#">Forgot Username</a>
+                <a href="#">Forgot Password</a>
+              </p>
+              <p>
+              <a href="{{ url_for('account_details') }}" class="btn btn-blue" style="margin-bottom:10px;">Login</a></p>
             </div>
           </div>
         </div>
@@ -113,7 +122,9 @@
       </div>
       <div class="row bottom-footer text-center-mobile">
         <div class="col-sm-8">
-          <p>&copy; 2016. Powered by <a href="http://www.phir.co/">Benetech Labs</a></p>
+          <p>
+            &copy; 2016. Powered by <a href="http://www.phir.co/">Benetech Labs</a>
+          </p>
         </div>
       </div>
     </div>
@@ -126,13 +137,13 @@
   </div>
   <!-- Scripts -->
   <!-- TODO: Load whatever can be loaded from a CDN -->
-  <script src="js/jquery-1.11.1.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/wow.min.js"></script>
-  <script src="js/typewriter.js"></script>
-  <script src="js/jquery.onepagenav.js"></script>
-  <script src="js/main.js"></script>
+  <script src="{{ url_for('static', filename='js/jquery-1.11.1.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/wow.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/typewriter.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/jquery.onepagenav.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 
 </html>
