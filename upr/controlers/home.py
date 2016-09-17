@@ -21,6 +21,14 @@ def account_details():
     return render_template('accountdetails.html')
 
 
+@app.route("/login")
+def login():
+    """
+    displays the account login page.
+    """
+    return render_template('login.html')
+
+
 @app.route("/edit")
 def edit():
     """
