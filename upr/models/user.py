@@ -12,6 +12,14 @@ class User(db.Model):
     email = db.Column(db.String(128), unique=True, nullable = False)
     password = db.Column(db.String(128), nullable = False)
     is_active = db.Column(db.Boolean, nullable=False)
+    first_name = db.Column(db.String(32), nullable = False)
+    last_name = db.Column(db.String(32), nullable = False)
+    province = db.Column(db.String(32), nullable = False)
+    country = db.Column(db.String(32), nullable = False)
+    country_code = db.Column(db.String(6))
+    phone = db.Column(db.String(16))
+    organization_id = db.Column(db.Integer, db.ForeignKey('organization.id'), nullable = True)
+    organization = db.relationship('Organization')
 
     def __init__(self, email, password):
         self.email = email
