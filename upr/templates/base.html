@@ -5,9 +5,10 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A United Nations web application to collect human rights violations around the world.">
-  <meta name="keywords" content="UN,united nations, human rights, violations, universal period review" />
-  <title>
+<!--   <meta name="description" content="A United Nations web application to collect human rights violations around the world.">
+ -->
+<!--   <meta name="keywords" content="UN,united nations, human rights, violations, universal period review" />
+ -->  <title>
   {% block title %}
   {% endblock title %}
   </title>
@@ -24,20 +25,20 @@
   <!-- upr specific styles -->
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/upr_styles.css') }}">
   <!-- Normalize -->
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/normalize.css') }}">
-  <!-- Bootstrap -->
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/normalize.css') }}">
+  <!-- Bootstrap from CDN -->
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <!-- Owl -->
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/owl.css') }}">
-  <!-- Animate.css -->
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/animate.css') }}">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='fonts/font-awesome-4.1.0/css/font-awesome.min.css') }}">
-  <!-- Elegant Icons -->
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='fonts/eleganticons/et-icons.css') }}">
-  <!-- Main style -->
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/cardio.css') }}">
-</head>
+<!--   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/owl.css') }}">
+ -->  <!-- Animate.css -->
+<!--   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/animate.css') }}">
+ -->  <!-- Font Awesome -->
+<!--   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='fonts/font-awesome-4.1.0/css/font-awesome.min.css') }}">
+ -->  <!-- Elegant Icons -->
+<!--   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='fonts/eleganticons/et-icons.css') }}">
+ -->  <!-- Main style -->
+<!--   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/cardio.css') }}">
+ --></head>
 <body>
   <div class="preloader">
     <img src="{{ url_for('static', filename='') }}img/loader.gif" alt="Preloader image">
@@ -59,6 +60,7 @@
         <ul class="nav navbar-nav navbar-right main-nav">
           <li><a href="#pricing">What is UPR?</a></li>
           <li><a href="#" data-toggle="modal" data-target="#modal1" class="btn btn-blue">Register</a></li>
+          <li><a href="{{ url_for('login') }}" class="btn btn-blue" style="margin-bottom:10px;">Login</a></li>
         </ul>
       </div>
       <!-- /.navbar-collapse -->
@@ -136,11 +138,10 @@
     <a href="#" class="close-link"><i class="arrow_up"></i></a>
   </div>
   <!-- Scripts -->
-  <!-- TODO: Load whatever can be loaded from a CDN -->
-  <script src="{{ url_for('static', filename='js/jquery-1.11.1.min.js') }}"></script>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/wow.min.js') }}"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="{{ url_for('static', filename='js/typewriter.js') }}"></script>
   <script src="{{ url_for('static', filename='js/jquery.onepagenav.js') }}"></script>
   <script src="{{ url_for('static', filename='js/main.js') }}"></script>
