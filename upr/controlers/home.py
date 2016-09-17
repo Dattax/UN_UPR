@@ -12,7 +12,7 @@ def index():
     return render_template('index.html')
 
 
-@app.route("/accountdetails")
+@app.route("/account")
 def account_details():
     """
     displays the account details page.
@@ -27,9 +27,10 @@ def edit():
     """
     return render_template('edit.html')
 
+
 @app.route("/landing")
 def landing():
-"""
+    """
     displays the landing page.
     """
     return render_template('landing.html')
@@ -37,7 +38,7 @@ def landing():
 
 @app.route("/status")
 def status():
-"""
+    """
     displays the status page.
     """
     return render_template('status.html')
@@ -45,15 +46,15 @@ def status():
 
 @app.route("/submission")
 def submission():
-"""
+    """
     displays the submission page.
     """
     return render_template('submission.html')
 
+
 @app.route("/thanks")
 def thanks():
-"""
+    """
     displays the thanks page.
     """
     return render_template('thanks.html')
-
