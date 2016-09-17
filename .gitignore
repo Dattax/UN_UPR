@@ -12,4 +12,10 @@ var
 sdist
 develop-eggs
 .installed.cfg
-
+.vagrant
+Vagrantfile
+lib
+local
+include
+.python
+pip-selfcheck.json

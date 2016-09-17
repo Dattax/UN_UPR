@@ -1,5 +1,5 @@
 '''
-This is the authentication and authorization module for the United Nations
+This is the authentication module for the United Nations
 Universal Periodic Review web app.
 '''
 import re

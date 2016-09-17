@@ -1,7 +1,8 @@
 /*This is a stylesheet that augments the others and moves the on page styles to a single css file.*/
 
 /*styles from edit page*/
-body p, .bigbox {
+body p,
+.bigbox {
 	font-size:17px;
 	display:block;
 	float:left;
@@ -9,12 +10,45 @@ body p, .bigbox {
 	margin:5px;
 }
 
-input, textarea {
+input,
+textarea {
 	margin-top:5px;
 }
 
-.tg  {border-collapse:collapse;border-spacing:0;margin-bottom:30px;}
-.tg tr td{font-size:24px; color:white; padding:16px 10px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
-.tg th{font-size:24px; color:white; font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;}
-.tg .tg-yw4l{vertical-align:top}
+.tg  {
+	border-collapse:collapse;
+	border-spacing:0;
+	margin-bottom:30px;
+}
 
+.tg tr td{
+	font-size:24px;
+	color:white;
+	padding:16px 10px;
+	border-style:solid;
+	border-width:1px;
+	overflow:hidden;
+	word-break:normal;
+}
+
+.tg th{
+	font-size:24px;
+	color:white;
+	font-weight:normal;
+	padding:10px 5px;
+	border-style:solid;
+	border-width:0px;
+	overflow:hidden;
+	word-break:normal;
+}
+
+.tg,
+.tg-yw4l{
+	vertical-align:top
+}
+
+.flb {
+	display:block;
+	margin:10px;
+	position:relative;
+}
