@@ -1,7 +1,8 @@
 """
 These are the base controlers that render pages attatched to the homepage.
 """
-from upr import app, render_template
+from upr import app
+from flask import url_for, render_template
 
 
 @app.route("/")
