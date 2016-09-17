@@ -5,6 +5,7 @@
 {% endblock title %}
 
 {% block content %}
+<!-- TODO: create controller to connect the form controls up to the model -->
 	<section class="section section-padded" style="background-image:url('{{ url_for('static', filename='img/header.jpg') }}');">
 		<div class="container">
 			<div class="row"><center>
@@ -27,6 +28,7 @@
 								<p>Street Address:<br />
 								<input class="form-control form-white" style="border:3px solid white; height:20px;" type="text"/></p>
 								<p>Country:<br />
+								<!-- TODO: Dynamically generate list in template using JSON -->
 								<select style="color:white;">
 									<option value="Afghanistan" title="Afghanistan">Afghanistan</option>
 									<option value="Åland Islands" title="Åland Islands">Åland Islands</option>
