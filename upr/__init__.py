@@ -13,3 +13,5 @@ db = SQLAlchemy(app)
 
 #import controlers to establish routes.
 import controlers
+#import models to create them:
+import models
