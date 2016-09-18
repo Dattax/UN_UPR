@@ -11,28 +11,33 @@
         <div class="col-md-12">
           <center>
             <div class="form-input">
+{% for field in form.errors %}
+{% for error in form.errors[field] %}
+    <div class="alert alert-error">
+        <strong>Error!</strong> {{field}} {{error}}
+    </div>
+{% endfor %}
+{% endfor %}
               <form action={{ url_for('register_user') }} method="post" id="login-form">
                 <fieldset>
               <label for="Email">Email:</label>
-              <input type="text" class="form-control form-white" placeholder="required" name="Email">
+{{ form.email(class="form-control form-white", placeholder="required") }}
               <label for="Password">Password:</label>
-              <input type="password" class="form-control form-white" placeholder="required" name="Password">
-                  <label for="FName">First Name:</label>
-                  <input type="text" class="form-control form-white" placeholder="" name="FName">
-                  <label for="LName">Last Name:</label>
-                  <input type="text" class="form-control form-white" placeholder="" name="LName">
-                  <label for="Phone">Phone Number</label>
-                  <input type="tel" class="form-control form-white" placeholder="" name="Phone">
-                  <label for="Address">Street Address:</label>
-                  <input type="text" class="form-control form-white" placeholder="" name="Address">
-                  <label for="PostalCode">Postal Code:</label>
-                  <input type="text" class="form-control form-white" placeholder="" name="PostalCode">
-                  <label for="Province">Province:</label>
-                  <input type="text" class="form-control form-white" placeholder="" name="Province">
-                  <label for="Country">Country:</label>
-                  <select name="Country">
-                    <option value="U.S.A." title="U.S.A.">United States of America</option>
-                  </select>
+{{ form.password(class="form-control form-white", placeholder="required") }}
+<label for="first_name">First Name:</label>
+{{ form.first_name(class="form-control form-white", placeholder="required", label="First Name") }}
+<label for="last_name">Last Name:</label>
+{{ form.last_name(class="form-control form-white", placeholder="required", label="Last Name") }}
+<label for="phone">Phone:</label>
+{{ form.phone(class="form-control form-white", placeholder="required", label="Phone") }}
+<label for="address">Address:</label>
+{{ form.address(class="form-control form-white", placeholder="required", label="Address") }}
+<label for="postal_code">Postal Code:</label>
+{{ form.postal_code(class="form-control form-white", placeholder="required", label="Postal Code") }}
+<label for="province">Province:</label>
+{{ form.province(class="form-control form-white", placeholder="required", label="Province") }}
+<label for="country">Country:</label>
+{{ form.country(class="form-control form-white", placeholder="required", label="Country") }}"
                 </fieldset>
 {{ form.csrf_token }}
                 <fieldset class="accountAction">

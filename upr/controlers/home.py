@@ -38,7 +38,7 @@ def register_user():
             setattr(user, field, getattr(form, field))
         user.commit()
         login_user(user)
-        flask("Registration successful. Welcome, %s." %(user.first_name))
+        flash("Registration successful. Welcome, %s." %(user.first_name))
         return redirect(url_for('landing'))
 
     return render_template('register_user.html', form=form)
