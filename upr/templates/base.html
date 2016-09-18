@@ -25,61 +25,62 @@
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/upr_styles.css') }}">
   </head>
 <body>
-  <!-- TOP NAV -->
-  <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="{{ url_for('index') }}">
-          <img src="{{ url_for('static', filename='img/logo.png') }}" alt="United Nations Universal Period Review Logo">
-        </a>
-      </div>
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right main-nav">
-          <li><a href="{{ url_for('about') }}" class="btn btn-blue">About UPR</a></li>
-          <li><a href="{{ url_for('register_user') }}" class="btn btn-blue">Register</a></li>
-          <li><a href="{{ url_for('login') }}" class="btn btn-blue">Login</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
 
-  <header id="intro">
-    <div class="container">
-      <div class="table">
-        <div class="header-text">
-          <div class="row">
-            <div class="col-md-12 text-center">
-              <h3 class="light white">United Nations</h3>
-              <h1 class="white typed">Universal Periodic Review</h1>
+    <!-- TOP NAV -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="{{ url_for('index') }}">
+            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="United Nations Universal Period Review Logo">
+          </a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right main-nav">
+            <li><a href="{{ url_for('about') }}" class="btn btn-blue">About UPR</a></li>
+            <li><a href="{{ url_for('register_user') }}" class="btn btn-blue">Register</a></li>
+            <li><a href="{{ url_for('login') }}" class="btn btn-blue">Login</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="container-fluid">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h3>United Nations</h3>
+          <h1>Universal Periodic Review</h1>
+        </div>
+      </div>
+    </header>
+
+    <content class="container-fluid">
+      {% block content %}
+      {% endblock content %}
+    </content>
+
+    <footer>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-6 text-center">
+              &copy; 2016. Powered by <a href="http://www.phir.co/">Benetech Labs</a>
+            </div>
+            <div class="col-md-3">
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </header>
-
-{% block content %}
-{% endblock content %}
-
-  <footer>
-    <div class="container">
-      <div class="row bottom-footer text-center-mobile">
-        <div class="col-sm-8">
-          <p>
-            &copy; 2016. Powered by <a href="http://www.phir.co/">Benetech Labs</a>
-          </p>
-        </div>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
   <!-- SCRIPTS -->
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
