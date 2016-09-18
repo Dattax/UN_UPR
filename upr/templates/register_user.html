@@ -5,14 +5,13 @@
 {% endblock title %}
 
 {% block content %}
-  <!-- TODO: create controller to connect the form controls up to the model -->
   <section>
     <content>
       <div class="row">
         <div class="col-md-12">
           <center>
             <div class="form-input">
-              <form action="" method="post" id="login-form">
+              <form {{ url_for('register_user') }} method="post" id="login-form">
                 <fieldset>
                   <label for="FName">First Name:</label>
                   <input type="text" class="form-control form-white" placeholder="" name="FName">
@@ -27,10 +26,11 @@
                   <label for="Province">Province:</label>
                   <input type="text" class="form-control form-white" placeholder="" name="Province">
                   <label for="Country">Country:</label>
-                  <select name="country">
+                  <select name="Country">
                     <option value="U.S.A." title="U.S.A.">United States of America</option>
                   </select>
                 </fieldset>
+{{ form.csrf_token }}
                 <fieldset class="accountAction">
                   <input type="submit" class="btn btn-primary" name="submit" value="Submit">
                 </fieldset>

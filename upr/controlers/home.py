@@ -2,8 +2,10 @@
 These are the base controlers that render pages attatched to the homepage.
 """
 from upr import app
-from flask import url_for, render_template
-
+from upr.forms import LoginForm, RegistrationForm
+from upr.models import User
+from flask import url_for, render_template, flash, redirect
+from flask_login import login_user, login_required
 
 @app.route("/")
 def index():
@@ -21,15 +23,28 @@ def register_org():
     return render_template('register_org.html')
 
 
-@app.route("/register_user")
+@app.route("/register_user", methods = ["GET", "POST"])
 def register_user():
     """
     displays the register user page.
     """
-    return render_template('register_user.html')
+    form = RegistrationForm()
+    if form.validate_on_submit():
+        user = User(form.email, form.password)
+        #values to copy
+        values = ['first_name', 'last_name', 'address', 'postal_code',\
+        'province', 'country', 'phone']
+        for field in values:
+            setattr(user, field, getattr(form, field))
+        user.commit()
+        login_user(user)
+        flask("Registration successful. Welcome, %s." %(user.first_name))
+        return redirect(url_for('landing'))
+
+    return render_template('register_user.html', form=form)
 
 
-@app.route("/login")
+@app.route("/login", methods = ["GET", "POST"])
 def login():
     """
     displays the account login page.
@@ -46,6 +61,7 @@ def edit():
 
 
 @app.route("/landing")
+@login_required
 def landing():
     """
     displays the landing page.

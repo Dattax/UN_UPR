@@ -14,6 +14,8 @@ class User(db.Model):
     is_active = db.Column(db.Boolean, nullable=False)
     first_name = db.Column(db.String(32), nullable = False)
     last_name = db.Column(db.String(32), nullable = False)
+    address = db.Column(db.String)
+    postal_code = db.Column(db.String)
     province = db.Column(db.String(32), nullable = False)
     country = db.Column(db.String(32), nullable = False)
     country_code = db.Column(db.String(6))

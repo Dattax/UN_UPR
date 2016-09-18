@@ -11,3 +11,5 @@ DEBUG = True
 # define our sqlite database.
 SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(BASE_DIR, 'app.db')
 SQLALCHEMY_TRACK_MODIFICATIONS=False
+#secret key, for sessions and etc.
+SECRET_KEY = 'b01PfBh0AYL8xS7dB6t4AnVeAARaQGiGYMwmjMLT'

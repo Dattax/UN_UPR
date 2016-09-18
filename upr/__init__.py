@@ -6,6 +6,7 @@ Creates the UPR package and imports and initializes all required objects.
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
+from flask_wtf.csrf import CsrfProtect
 
 # create the app.
 app = Flask("upr")
@@ -27,4 +28,5 @@ import models
 import forms
 
 #finish initializing the login manager
+CsrfProtect(app)
 login_manager.init_app(app)
