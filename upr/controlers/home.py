@@ -13,7 +13,6 @@ def index():
     return render_template('index.html')
 
 
-
 @app.route("/register_org")
 def register_org():
     """
@@ -52,6 +51,13 @@ def landing():
     displays the landing page.
     """
     return render_template('landing.html')
+
+@app.route("/about")
+def about():
+    """
+    displays the landing page.
+    """
+    return render_template('about.html')
 
 
 @app.route("/status")
