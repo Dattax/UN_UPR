@@ -65,6 +65,11 @@ used this to resolve install: [https://github.com/pyca/pyopenssl/issues/117](htt
 
 Other images from [Pixabay](https://pixabay.com/)
 
+### Data Providers
+
+## Country Data
+Extracted into country_data.json and taken from [peric.github.io/GetCountries](http://peric.github.io/GetCountries/) with source data provided by [geonames.org](http://www.geonames.org/).
+TODO: call funcitons via their API. [Geonames.org API Docs](http://www.geonames.org/export/web-services.html)
 ## Misc
 
 Follow us: [Twitter](http://www.twitter.com/codrops), [Facebook](http://www.facebook.com/pages/Codrops/159107397912), [Google+](https://plus.google.com/101095823814290637419), [GitHub](https://github.com/codrops), [Pinterest](http://www.pinterest.com/codrops/)

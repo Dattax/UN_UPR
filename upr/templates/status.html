@@ -7,7 +7,7 @@
 
 {% block content %}
   <section>
-      <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content modal-popup">
         <a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
@@ -30,110 +30,75 @@
               <label for="squaredOne"><span>I understand that I will no longer have access to this submission after <strong>withdrawing</strong></span></label>
             </div>
           </div>
-          <a href="accountdetails.html" type="submit" class="btn btn-submit">Submit</a>
+          <a href="{{ url_for('account_details') }}" type="submit" class="btn btn-submit">Submit</a>
         </form>
       </div>
     </div>
   </div>
   </section>
 
-  <section class="section section-padded" style="background-image:url('img/footer2.jpg');">
+  <section class="section section-padded" style="background-image:url('{{ url_for('static', filename='img/footer2.jpg') }}');">
     <div class="container">
-      <div class="row"><center>
-        <h3 class="white typed">Status of your UPR Complaints</h3><br />
+      <div class="row">
+      <center>
+        <h3 class="white typed">Status of your UPR Complaints</h3></br>
+      </center>
 
-<table class="tg">
-  <tr>
-    <th style="font-size:14px;" class="tg-031e">Complaint #</th>
-    <th style="font-size:14px;" class="tg-yw4l">Complaint Title</th>
-    <th style="font-size:14px;" class="tg-yw4l">Authors</th>
-    <th style="font-size:14px;" class="tg-yw4l">Country</th>
-    <th style="font-size:14px;" class="tg-yw4l">Date Submitted</th>
-    <th style="font-size:14px;" class="tg-yw4l">Status</th>
-    <th style="font-size:14px;" class="tg-yw4l">Options</th>
-  </tr>
-  <tr>
-    <td class="tg-yw4l">1</td>
-    <td class="tg-yw4l">LGBTQ Human Rights Issues</td>
-    <td class="tg-yw4l">Deep Datta</td>
-    <td class="tg-yw4l">United States</td>
-    <td class="tg-yw4l">08/29/2016</td>
-    <td class="tg-yw4l"><span style="font-size:14px;">Under Review</a></td>
-    <td class="tg-yw4l"><a href="#" style="font-size:14px;">Edit</a> <a href="#" data-toggle="modal" data-target="#modal1"><span style="font-size:14px;">Withdraw Complaint</span></a></td>
-  </tr>
-  <tr>
-    <td class="tg-yw4l">2</td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"><a href="#" style="font-size:14px;">Edit</a> <a href="#" data-toggle="modal" data-target="#modal1"><span style="font-size:14px;">Withdraw Complaint</span></a></td>
-  </tr>
-  <tr>
-    <td class="tg-yw4l">3</td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"><a href="#" style="font-size:14px;">Edit</a> <a href="#" data-toggle="modal" data-target="#modal1"><span style="font-size:14px;">Withdraw Complaint</span></a></td>
-  </tr>
-  <tr>
-    <td class="tg-yw4l">4</td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"><a href="#" style="font-size:14px;">Edit</a> <a href="#" data-toggle="modal" data-target="#modal1"><span style="font-size:14px;">Withdraw Complaint</span></a></td>
-  </tr>
-  <tr>
-    <td class="tg-yw4l">5</td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"><a href="#" style="font-size:14px;">Edit</a> <a href="#" data-toggle="modal" data-target="#modal1"><span style="font-size:14px;">Withdraw Complaint</span></a></td>
-  </tr>
-  <tr>
-    <td class="tg-yw4l">6</td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"><a href="#" style="font-size:14px;">Edit</a> <a href="#" data-toggle="modal" data-target="#modal1"><span style="font-size:14px;">Withdraw Complaint</span></a></td>
-  </tr>
-  <tr>
-    <td class="tg-yw4l">7</td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"><a href="#" style="font-size:14px;">Edit</a> <a href="#" data-toggle="modal" data-target="#modal1"><span style="font-size:14px;">Withdraw Complaint</span></a></td>
-  </tr>
-  <tr>
-    <td class="tg-yw4l">8</td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"><a href="#" style="font-size:14px;">Edit</a> <a href="#" data-toggle="modal" data-target="#modal1"><span style="font-size:14px;">Withdraw Complaint</span></a></td>
-  </tr>
-  <tr>
-    <td class="tg-yw4l">9</td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"><a href="#" style="font-size:14px;">Edit</a> <a href="#" data-toggle="modal" data-target="#modal1"><span style="font-size:14px;">Withdraw Complaint</span></a></td>
-  </tr>
-</table>
+          <table class="tg">
+            <tr>
+              <th class="tg-031e">
+                Id
+              </th>
+              <th class="tg-yw4l">
+                Complaint Title
+              </th>
+              <th class="tg-yw4l">
+                Author
+              </th>
+              <th class="tg-yw4l">
+                Country
+              </th>
+              <th class="tg-yw4l">
+                Submitted
+              </th>
+              <th class="tg-yw4l">
+                Last Updated
+              </th>
+              <th class="tg-yw4l">
+                Status
+              </th>
+              <th class="tg-yw4l">
+                Options
+              </th>
+            </tr>
+            <tr>
+              <td class="tg-yw4l">
+                1
+              </td>
+              <td class="tg-yw4l">
+                LGBTQ Human Rights Issues</td>
+              <td class="tg-yw4l">
+                Deep Datta
+              </td>
+              <td class="tg-yw4l">
+                United States
+              </td>
+              <td class="tg-yw4l">
+                08/29/2016 15:00 GMT
+              </td>
+              <td class="tg-yw4l">
+                08/29/2016 15:00 GMT
+              </td>
+              <td class="tg-yw4l">
+                Under Review
+              </td>
+              <td class="tg-yw4l">
+                <a href="#">Edit</a>
+                <a href="#" data-toggle="modal" data-target="#modal1">Withdraw Complaint</a>
+              </td>
+            </tr>
+          </table>
 
     </div></div>
+  </section>
 {% endblock content %}
