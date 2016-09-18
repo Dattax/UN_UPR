@@ -14,5 +14,5 @@ class RegistrationForm(Form):
     address = StringField('Address')
     postal_code = StringField('PostalCode')
     province = StringField('Province')
-    country = SelectField('Country')
+#    country = StringField('Country')
     
