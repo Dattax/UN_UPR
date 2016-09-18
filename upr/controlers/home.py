@@ -13,12 +13,21 @@ def index():
     return render_template('index.html')
 
 
-@app.route("/account")
-def account_details():
+
+@app.route("/register_org")
+def register_org():
     """
-    displays the account details page.
+    displays the organization registration page.
     """
-    return render_template('accountdetails.html')
+    return render_template('register_org.html')
+
+
+@app.route("/register_user")
+def register_user():
+    """
+    displays the register user page.
+    """
+    return render_template('register_user.html')
 
 
 @app.route("/login")
