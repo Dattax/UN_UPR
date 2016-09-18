@@ -40,10 +40,8 @@
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/cardio.css') }}">
 </head>
 <body>
-  <div class="preloader">
-    <img src="{{ url_for('static', filename='img/loader.gif') }}" alt="Preloader image">
-  </div>
-  <nav class="navbar">
+  <!-- TOP NAV -->
+  <nav class="navbar navbar-inverse">
     <div class="container">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -53,14 +51,14 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#"><img src="{{ url_for('static', filename='img/logo.png') }}" data-active-url="{{ url_for('static', filename='img/logo-active.png') }}" alt=""></a>
+        <a class="navbar-brand" href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='img/logo.png') }}" data-active-url="{{ url_for('static', filename='img/logo-active.png') }}" alt="United Nations Universal Period Review Logo"></a>
       </div>
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right main-nav">
-          <li><a href="#pricing">What is UPR?</a></li>
-          <li><a href="#" data-toggle="modal" data-target="#modal1" class="btn btn-blue">Register</a></li>
-          <li><a href="{{ url_for('login') }}" class="btn btn-blue" style="margin-bottom:10px;">Login</a></li>
+          <li><a href="{{ url_for('About') }}" class="btn btn-blue">About UPR</a></li>
+          <li><a href="{{ url_for('user') }}" class="btn btn-blue">Register</a></li>
+          <li><a href="{{ url_for('login') }}" class="btn btn-blue">Login</a></li>
         </ul>
       </div>
       <!-- /.navbar-collapse -->
@@ -89,9 +87,9 @@
                 <a href="#">Forgot Password</a>
               </p>
               <p>
-              <a href="{{ url_for('account_details') }}" class="btn btn-blue" style="margin-bottom:10px;">Login</a></p>
+              <a href="{{ url_for('login') }}" class="btn btn-blue" style="margin-bottom:10px;">Login</a></p>
             </div>
-          </div>
+          </div>ß
         </div>
       </div>
     </div>
