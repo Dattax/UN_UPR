@@ -6,7 +6,8 @@ div[class="row"] {
 }
 
 div[class^="col-"] {
-    background-color: rgb(255, 0, 0);
+	border-right: 1px dotted rgb(255, 0, 0);
+	border-left: 1px dotted rgb(255, 0, 0);
 }
 
 /* MAIN STYLES */
