@@ -6,21 +6,25 @@
 
 {% block content %}
 
-<div class="row">
-<div class="col-md-12">
-<center>
-<div class="form-input">
-  <form action="" method="post" id="login-form">
-    <fieldset></fieldset>
-      <input type="text" class="form-control form-white" placeholder="Enter Username" name="username">
-        <input type="password" class="form-control form-white" placeholder="Enter password" name="password">
-      </fieldset>
-      <fieldset class="accountAction">
-      <input type="submit" class="btn btn-primary" name="submit" value="Submit">
-    </fieldset>
-  </form>
-</div>
-</center>
-</div>
-</div>
+<content>
+  <div class="row">
+    <div class="col-md-12">
+      <center>
+        <div class="form-input">
+          <form action="" method="post" id="login-form">
+            <fieldset></fieldset>
+              <label for="username">Username:</label>
+              <input type="text" class="form-control form-white" placeholder="required" name="username">
+              <label for="password">Password:</label>
+              <input type="password" class="form-control form-white" placeholder="requried" name="password">
+            </fieldset>
+            <fieldset class="accountAction">
+              <input type="submit" class="btn btn-primary" name="submit" value="Submit">
+            </fieldset>
+          </form>
+        </div>
+      </center>
+    </div>
+  </div>
+</content>
 {% endblock content %}
