@@ -17,7 +17,7 @@ class User(db.Model):
     address = db.Column(db.String)
     postal_code = db.Column(db.String)
     province = db.Column(db.String(32), nullable = False)
-    country = db.Column(db.String(32), nullable = False)
+    country = db.Column(db.String(32), nullable = False, default="US")
     country_code = db.Column(db.String(6))
     phone = db.Column(db.String(16))
     organization_id = db.Column(db.Integer, db.ForeignKey('organization.id'), nullable = True)
