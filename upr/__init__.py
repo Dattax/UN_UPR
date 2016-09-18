@@ -23,6 +23,8 @@ login_manager = LoginManager()
 import controlers
 # import models to create them:
 import models
+#import all forms and their validators
+import forms
 
 #finish initializing the login manager
 login_manager.init_app(app)
