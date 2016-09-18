@@ -2,7 +2,8 @@
 
 /*styles from edit page*/
 body {
-	padding-top: 80px;
+	padding-top: 50px;
+	background-color: #d9d9d9;
 }
 
 input,
@@ -11,7 +12,22 @@ textarea {
 }
 
 header {
+	background-image: url('../img/header.jpg');
+	background-color: blue;
+}
 
+content {
+	padding: 10px;
+}
+
+footer {
+	position: fixed;
+    bottom: 0;
+    width: 100%;
+	min-height: 50px;
+	background-image: url('../img/footer2.jpg');
+	background-color: black;
+	color: white;
 }
 
 .navbar-brand {
@@ -22,6 +38,5 @@ header {
 	border:3px solid white;
 	padding:30px 60px;
 	width:75%;
-	background-image:url('../img/footer2.jpg');
-
+	background-image: url('../img/footer2.jpg');
 }
