@@ -27,7 +27,7 @@ import models
 #import all forms and their validators
 import forms
 
-# create all talbes if hte database doesent exist
+# create all tables if hte database doesent exist
 db.create_all()
 
 # finish initializing the login manager
