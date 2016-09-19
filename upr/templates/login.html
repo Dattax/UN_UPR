@@ -12,12 +12,13 @@
       <center>
         <div class="form-input">
           <form action="" method="post" id="login-form">
-            <fieldset></fieldset>
+            <fieldset>
               <label for="Email">Email:</label>
-              <input type="text" class="form-control form-white" placeholder="required" name="Email">
-              <label for="password">Password:</label>
-              <input type="password" class="form-control form-white" placeholder="requried" name="password">
-            </fieldset>
+{{ form.email(class="form-control form-white", placeholder="required") }}
+              <label for="Password">Password:</label>
+{{ form.password(class="form-control form-white", placeholder="required") }}
+{{ form.csrf_token }}
+</fieldset>
             <fieldset class="accountAction">
               <input type="submit" class="btn btn-primary" name="submit" value="Submit">
             </fieldset>

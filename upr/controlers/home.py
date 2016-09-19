@@ -49,7 +49,17 @@ def login():
     """
     displays the account login page.
     """
-    return render_template('login.html')
+    form = LoginForm()
+    if form.validate_on_submit():
+        user = User.find_by_email(form.email.data)
+        if not user or not user.password == form.password.data:
+            flash('Invalid user or password.')
+            return render_template('login', form = form)
+        user.is_authenticated = True
+        user.commit()
+        login_user(user)
+        return redirect(url_for('landing'))
+    return render_template('login.html', form = form)
 
 
 @app.route("/edit")
