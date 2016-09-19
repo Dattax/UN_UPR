@@ -11,6 +11,7 @@ div[class^="col-"] {
 }
 
 /* MAIN STYLES */
+
 body {
 	padding-top: 50px;
 	background-color: #d9d9d9;
@@ -41,6 +42,18 @@ footer {
 	background-image: url('../img/footer2.jpg');
 	background-color: black;
 	color: white;
+}
+
+.tile-button {
+	margin: 15px;
+	padding: 30px;
+	height: 150px;
+	background-image: url('../img/table-2.jpg');
+	background-size: 100%;
+	color: white;
+	border: 1px solid #ffffff;
+    box-shadow:  -1px 1px #ffffff,
+         -2px 2px #ffffff;
 }
 
 .center {

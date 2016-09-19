@@ -7,41 +7,26 @@
 
   {% block content %}
 {{ current_user.id }}
-    <section>
-      <div class="cut cut-top">
-        <div class="container">
-          <div class="row intro-tables">
-            <div class="col-md-4">
-              <div class="intro-table intro-table-hover" style="background-image:url('{{ url_for('static', filename='img/table-1.jpg') }}')">
-                <h5 class="white heading hide-hover">See the Map of Universal Periodic Review Submissions from Around the World</h5>
-                <div class="bottom">
-                  <h4 class="white heading small-heading no-margin regular">See Submissions Data</h4>
-                  <!-- TODO: add google map that shows all UPR submissions using the google maps api -->
-                  <a href="#" class="btn btn-white-fill expand">See Map</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="intro-table intro-table-hover" style="background-image:url('{{ url_for('static', filename='img/table-2.jpg') }}')">
-                <h5 class="white heading hide-hover">Learn more about how the Universal Periodic Review works and the basic guidelines to submit a complaint</h5>
-                <div class="bottom">
-                  <h4 class="white heading small-heading no-margin regular">UPR Guidelines and Questions</h4>
-                  <!-- TODO: route the creation of UPR Guidelines -->
-                  <a href="#" class="btn btn-white-fill expand">UPR Guidelines</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="intro-table intro-table-hover" style="background-image:url('{{ url_for('static', filename='img/table-3.jpg') }}')">
-                <h5 class="white heading hide-hover">A History of the United Nations Office of the High Commissioner</h5>
-                <div class="bottom">
-                  <h4 class="white heading small-heading no-margin regular">A History of UOCHR</h4>
-                  <a href="#" class="btn btn-white-fill expand">Learn More</a>
-                </div>
-              </div>
-            </div>
-          </div>
+  <content>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 tile-button">
+          <a href="#" class="btn btn-primary" role="button">See Submissions Data</a>
+          <h5>See the Map of Universal Periodic Review Submissions from Around the World</h5>
+          <!-- TODO: add google map that shows all UPR submissions using the google maps api -->
+        </div>
+
+        <div class="col-md-3 tile-button">
+          <a href="#" class="btn btn-primary" role="button">UPR Guide</a>
+          <h5 class="caption">Learn more about how the Universal Periodic Review works and the basic guidelines to submit a complaint</h5>
+            <!-- TODO: route the creation of UPR Guidelines -->
+        </div>
+
+        <div class="col-md-3 tile-button">
+            <a href="#" class="btn btn-primary" role="button">History of UOCHR</a>
+            <h5>A History of the United Nations Office of the High Commissioner</h5>
         </div>
       </div>
-    </section>
-  {% endblock content %}
+    </div>
+  </content>
+{% endblock content %}
