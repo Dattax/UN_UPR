@@ -5,49 +5,45 @@
 {% endblock title %}
 
 {% block content %}
-  <section>
-    <content>
-      <div class="row">
-        <div class="col-md-12">
-          <center>
-            <div class="form-input">
-{% for field in form.errors %}
-{% for error in form.errors[field] %}
-    <div class="alert alert-error">
-        <strong>Error!</strong> {{field}} {{error}}
-    </div>
-{% endfor %}
-{% endfor %}
-              <form action={{ url_for('register_user') }} method="post" id="login-form">
-                <fieldset>
+  <content>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-input center">
+          {% for field in form.errors %}
+            {% for error in form.errors[field] %}
+              <div class="alert alert-error">
+                  <strong>Error!</strong> {{field}} {{error}}
+              </div>
+            {% endfor %}
+          {% endfor %}
+          <form action="{{ url_for('register_user') }}" method="post" id="login-form">
+            <fieldset>
               <label for="Email">Email:</label>
-{{ form.email(class="form-control form-white", placeholder="required") }}
+              {{ form.email(class="form-control form-white", placeholder="required") }}
               <label for="Password">Password:</label>
-{{ form.password(class="form-control form-white", placeholder="required") }}
-<label for="first_name">First Name:</label>
-{{ form.first_name(class="form-control form-white", placeholder="required", label="First Name") }}
-<label for="last_name">Last Name:</label>
-{{ form.last_name(class="form-control form-white", placeholder="required", label="Last Name") }}
-<label for="phone">Phone:</label>
-{{ form.phone(class="form-control form-white", placeholder="required", label="Phone") }}
-<label for="address">Address:</label>
-{{ form.address(class="form-control form-white", placeholder="required", label="Address") }}
-<label for="postal_code">Postal Code:</label>
-{{ form.postal_code(class="form-control form-white", placeholder="required", label="Postal Code") }}
-<label for="province">Province:</label>
-{{ form.province(class="form-control form-white", placeholder="required", label="Province") }}
-<label for="country">Country:</label>
-{{ form.country(class="form-control form-white", placeholder="required", label="Country") }}"
-                </fieldset>
-{{ form.csrf_token }}
-                <fieldset class="accountAction">
-                  <input type="submit" class="btn btn-primary" name="submit" value="Submit">
-                </fieldset>
-              </form>
-            </div>
-          </center>
+              {{ form.password(class="form-control form-white", placeholder="required") }}
+              <label for="first_name">First Name:</label>
+              {{ form.first_name(class="form-control form-white", placeholder="required", label="First Name") }}
+              <label for="last_name">Last Name:</label>
+              {{ form.last_name(class="form-control form-white", placeholder="required", label="Last Name") }}
+              <label for="phone">Phone:</label>
+              {{ form.phone(class="form-control form-white", placeholder="required", label="Phone") }}
+              <label for="address">Address:</label>
+              {{ form.address(class="form-control form-white", placeholder="required", label="Address") }}
+              <label for="postal_code">Postal Code:</label>
+              {{ form.postal_code(class="form-control form-white", placeholder="required", label="Postal Code") }}
+              <label for="province">Province:</label>
+              {{ form.province(class="form-control form-white", placeholder="required", label="Province") }}
+              <label for="country">Country:</label>
+              {{ form.country(class="form-control form-white", placeholder="required", label="Country") }}
+            </fieldset>
+              {{ form.csrf_token }}
+            <fieldset class="accountAction">
+              <input type="submit" class="btn btn-primary" name="submit" value="Submit">
+            </fieldset>
+          </form>
         </div>
       </div>
-    </content>
-  </section>
+    </div>
+  </content>
 {% endblock content %}

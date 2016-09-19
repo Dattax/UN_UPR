@@ -7,6 +7,7 @@ from upr.models import User
 from flask import url_for, render_template, flash, redirect
 from flask_login import login_user, login_required, logout_user, current_user
 
+
 @app.route("/")
 def index():
     """
@@ -23,7 +24,7 @@ def register_org():
     return render_template('register_org.html')
 
 
-@app.route("/register_user", methods = ["GET", "POST"])
+@app.route("/register_user", methods=["GET", "POST"])
 def register_user():
     """
     displays the register user page.
@@ -31,20 +32,20 @@ def register_user():
     form = RegistrationForm()
     if form.validate_on_submit():
         user = User(form.email.data, form.password.data)
-        #values to copy
-        values = ['first_name', 'last_name', 'address', 'postal_code',\
-        'province', 'country', 'phone']
+        # values to copy
+        values = ['first_name', 'last_name', 'address', 'postal_code',
+                  'province', 'country', 'phone']
         for field in values:
             setattr(user, field, getattr(form, field).data)
         user.is_authenticated = True
         user.commit()
         login_user(user)
-        flash("Registration successful. Welcome, %s." %(user.first_name))
+        flash("Registration successful. Welcome, %s." % (user.first_name))
         return redirect(url_for('landing'))
     return render_template('register_user.html', form=form)
 
 
-@app.route("/login", methods = ["GET", "POST"])
+@app.route("/login", methods=["GET", "POST"])
 def login():
     """
     displays the account login page.
@@ -54,12 +55,13 @@ def login():
         user = User.find_by_email(form.email.data)
         if not user or not user.password == form.password.data:
             flash('Invalid user or password.')
-            return render_template('login', form = form)
+            return render_template('login', form=form)
         user.is_authenticated = True
         user.commit()
         login_user(user)
         return redirect(url_for('landing'))
-    return render_template('login.html', form = form)
+    return render_template('login.html', form=form)
+
 
 @app.route('/logout')
 def logout():
@@ -86,6 +88,7 @@ def landing():
     displays the landing page.
     """
     return render_template('landing.html')
+
 
 @app.route("/about")
 def about():
