@@ -17,7 +17,7 @@ app.config.from_object('upr.config')
 # initialize the sqlalchemy object.
 db = SQLAlchemy(app)
 
-#create the login manager class.
+# create the login manager class.
 login_manager = LoginManager()
 
 # import controlers to establish routes.
@@ -27,6 +27,9 @@ import models
 #import all forms and their validators
 import forms
 
-#finish initializing the login manager
+# create all talbes if hte database doesent exist
+db.create_all()
+
+# finish initializing the login manager
 CsrfProtect(app)
 login_manager.init_app(app)
