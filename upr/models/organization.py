@@ -9,6 +9,9 @@ class Organization(db.Model):
     The organization model provides access to organizations.
     Organizations are a collection of users belonging to a group.
     """
+
+    __tablename__ = 'organization'
+
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String, nullable=False)
     acronym = db.Column(db.String)

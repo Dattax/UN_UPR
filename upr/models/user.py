@@ -8,7 +8,9 @@ class User(db.Model):
     """
     The user model is responsible for handling all user operations.
     These include creation, search and delete.
-        """
+    """
+    __tablename__ = 'user'
+
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.Unicode(128), unique=True, nullable=False)
     password = db.Column(db.Unicode(128), nullable=False)
