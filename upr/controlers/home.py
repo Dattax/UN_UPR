@@ -120,3 +120,10 @@ def thanks():
     displays the thanks page.
     """
     return render_template('thanks.html')
+
+@app.route("/map")
+def map():
+    """
+    displays the thanks page.
+    """
+    return render_template('map.html')
