@@ -51,9 +51,11 @@ footer {
 }
 
 .form-input {
-	border:3px solid white;
 	padding:30px 60px;
 	width:75%;
 	background-image: url('../img/footer2.jpg');
 	color: white;
+	border: 1px solid #ffffff;
+    box-shadow:  -1px 1px #ffffff,
+         -2px 2px #ffffff;
 }
