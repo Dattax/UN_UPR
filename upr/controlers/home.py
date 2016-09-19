@@ -61,6 +61,15 @@ def login():
         return redirect(url_for('landing'))
     return render_template('login.html', form = form)
 
+@app.route('/logout')
+def logout():
+    user = current_user
+    if user:
+        user.is_authenticated = False
+        user.commit()
+        logout_user()
+    return render_template('index')
+
 
 @app.route("/edit")
 def edit():
