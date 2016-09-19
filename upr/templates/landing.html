@@ -30,20 +30,19 @@
           <h5>Create and submit a new UPR complaint.</h5>
         </div>
         <div class="col-md-3 tile-button">
-          <a href="#" class="btn btn-primary" role="button">Status of UPR Complaint</a>
+          <a href="{{ url_for('status') }}" class="btn btn-primary" role="button">Status of UPR Complaint</a>
           <h5>View the current status of a previously submitted UPR complaint.</h5>
             <!-- TODO: route the creation of UPR Guidelines -->
         </div>
         <div class="col-md-3 tile-button">
-          <a href="#" class="btn btn-primary" role="button">Edit / Merge a UPR Complaint</a>
-          <h5>Update an existing UPR complaint</h5>
-          <!-- TODO: route the creation of UPR Guidelines -->
+          <a href="{{ url_for('edit') }}" class="btn btn-primary" role="button">Edit / Merge a UPR Complaint</a>
+          <h5>Update an existing UPR complaint that you have submitted.</h5>
         </div>
       </div>
 
       <div class="row">
         <div class="col-md-3 tile-button">
-          <a href="#" class="btn btn-primary" role="button">See Submissions Data</a>
+          <a href="{{ url_for('map') }}" class="btn btn-primary" role="button">See Submissions Data</a>
           <h5>See the Map of Universal Periodic Review Submissions from Around the World</h5>
           <!-- TODO: add google map that shows all UPR submissions using the google maps api -->
         </div>
