@@ -5,6 +5,7 @@ from flask_wtf import Form
 from wtforms import StringField, PasswordField, SelectField
 from wtforms.validators import DataRequired, Email
 
+
 class RegistrationForm(Form):
     email = StringField('email', validators=[DataRequired(), Email()])
     password = PasswordField('password', validators=[DataRequired()])
@@ -15,4 +16,3 @@ class RegistrationForm(Form):
     postal_code = StringField('PostalCode')
     province = StringField('Province')
     country = StringField('Country')
-    
