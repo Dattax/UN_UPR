@@ -11,11 +11,12 @@
         <div class="col-md-12"></div>
           {% with messages = get_flashed_messages() %}
             {% if messages %}
-              <ul class=flashes>
+              <div class="alert alert-info fade in">
+                <a href="#" class="close" data-dismiss="alert">&times;</a>
                 {% for message in messages %}
-                  <li>{{ message }}</li>
+                  <strong>INFO:</strong> {{ message }}
                 {% endfor %}
-              </ul>
+            </div>
             {% endif %}
           {% endwith %}
         </div>
