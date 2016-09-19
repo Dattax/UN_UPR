@@ -61,4 +61,5 @@ class User(db.Model):
 
 @login_manager.user_loader
 def load_user(id):
+    """ looks up the user by their user id """
     return User.find_by_id(int(id))
