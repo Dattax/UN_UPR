@@ -5,7 +5,7 @@ from upr import app
 from upr.forms import LoginForm, RegistrationForm
 from upr.models import User
 from flask import url_for, render_template, flash, redirect
-from flask_login import login_user, login_required
+from flask_login import login_user, login_required, logout_user, current_user
 
 @app.route("/")
 def index():
@@ -64,11 +64,11 @@ def login():
 @app.route('/logout')
 def logout():
     user = current_user
-    if user:
+    if user and not user.is_anonymous:
         user.is_authenticated = False
         user.commit()
         logout_user()
-    return render_template('index')
+    return render_template('index.html')
 
 
 @app.route("/edit")
