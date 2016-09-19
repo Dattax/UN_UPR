@@ -30,17 +30,17 @@ def register_user():
     """
     form = RegistrationForm()
     if form.validate_on_submit():
-        user = User(form.email, form.password)
+        user = User(form.email.data, form.password.data)
         #values to copy
         values = ['first_name', 'last_name', 'address', 'postal_code',\
         'province', 'country', 'phone']
         for field in values:
-            setattr(user, field, getattr(form, field))
+            setattr(user, field, getattr(form, field).data)
+        user.is_authenticated = True
         user.commit()
         login_user(user)
         flash("Registration successful. Welcome, %s." %(user.first_name))
         return redirect(url_for('landing'))
-
     return render_template('register_user.html', form=form)
 
 
