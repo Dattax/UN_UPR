@@ -65,6 +65,9 @@ def login():
 
 @app.route('/logout')
 def logout():
+    """
+    renders index page page when logging out.
+    """
     user = current_user
     if user and not user.is_anonymous:
         user.is_authenticated = False
@@ -121,8 +124,9 @@ def thanks():
     """
     return render_template('thanks.html')
 
+
 @app.route("/map")
-def map():
+def map_page():
     """
     displays the thanks page.
     """

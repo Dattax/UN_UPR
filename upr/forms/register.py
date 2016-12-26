@@ -7,6 +7,9 @@ from wtforms.validators import DataRequired, Email
 
 
 class RegistrationForm(Form):
+    """
+    This wrapps the registration form.
+    """
     email = StringField('email', validators=[DataRequired(), Email()])
     password = PasswordField('password', validators=[DataRequired()])
     first_name = StringField('FName')
