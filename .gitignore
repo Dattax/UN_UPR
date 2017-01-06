@@ -19,3 +19,5 @@ local
 include
 .python
 pip-selfcheck.json
+.db
+.ds_store
