@@ -1,6 +1,6 @@
 apt-get -qqy update
-apt-get install python-virtualenv
-apt-get install python-setuptools
+apt-get -qqy install python-virtualenv
+apt-get -qqy install python-setuptools
 apt-get -qqy install postgresql python-psycopg2
 apt-get -qqy install python-flask python-sqlalchemy
 apt-get -qqy install python-pip
