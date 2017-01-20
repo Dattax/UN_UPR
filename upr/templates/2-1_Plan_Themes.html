@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}
+    U.N. Universal Period Review - New Submission
+{% endblock title %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <!-- Left Status Bar -->
+        <div class="col-md-3">
+          <div class="row">
+            <!-- Reporting Gantt Chart Timeline Status -->
+            <div class="gantt_timeline">
+
+            </div>
+          </div>
+          <div class="row">
+            <!-- Workflow Statge Menu -->
+            <div class="stage_menu">
+
+              <ul class="nav nav-pills nav-stacked">
+                <li ><a href="#">Home</a></li></li>
+                <li class="active"><a href="#">Plan</a></li>
+                <li><a href="#">Research</a></li>
+                <li><a href="#">Draft</a></li>
+                <li><a href="#">Submit</a></li>
+              </ul>
+
+            </div>
+          </div>
+        </div>
+        <!-- Current Workflow Stage -->
+        <div class="col-md-9">
+          <!-- Current Stage Subform Process Checkpoints -->
+          <div class="row">
+            <!-- Add title of current subform process flow here -->
+            <div class="subform_title">
+              Planning Phase
+            </div>
+          </div>
+          <div class="row">
+            <!-- Subform -->
+           `<div class="subform_content">
+            <!-- Load form elements dynamically HERE -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+{% block content %}
