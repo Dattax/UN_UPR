@@ -4,9 +4,14 @@ Creates the UPR package and imports and initializes all required objects.
 
 # import top-level flask bits.
 from flask import Flask, render_template
+<<<<<<< Updated upstream
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from flask_wtf.csrf import CsrfProtect
+=======
+# from sqlalchemy import create_engine
+# from flask.ext.sqlalchemy import SQLAlchemy
+>>>>>>> Stashed changes
 
 # create the app.
 app = Flask("upr")
@@ -15,7 +20,7 @@ app = Flask("upr")
 app.config.from_object('upr.config')
 
 # initialize the sqlalchemy object.
-db = SQLAlchemy(app)
+# db = SQLAlchemy(app)
 
 # create the login manager class.
 login_manager = LoginManager()
